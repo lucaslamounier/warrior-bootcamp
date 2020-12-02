@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-user
+  template:
+    metadata:
+      labels:
+        app: backend-user
+    spec:
+      containers:
+      - name: backend-user
+        image: backend-user:0.0.1
+        env:
+          - name: NODE_ENV
+            value: staging
+          - name: MONGO_URI
+            value: mongodb+srv://dbuser2020:6n3PnC8H7QCzXoH9@app-warrion-course.ykn8e.mongodb.net/dbWarrionCourse?retryWrites=true&w=majority
+          - name: SECRET_OR_KEY
+            value: 6n3PnC8H7QCzXoH9
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3020

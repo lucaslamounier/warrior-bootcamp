@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: questcode
+  namespace: staging
+data:
+  NODE_ENV: staging
+  MONGO_URI: mongodb+srv://dbuser2020:6n3PnC8H7QCzXoH9@app-warrion-course.ykn8e.mongodb.net/dbWarrionCourse?retryWrites=true&w=majority
+  SECRET_OR_KEY: 6n3PnC8H7QCzXoH9
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: questcode
+  namespace: prod
+data:
+  NODE_ENV: staging
+  MONGO_URI: mongodb+srv://dbuser2020:6n3PnC8H7QCzXoH9@app-warrion-course.ykn8e.mongodb.net/dbWarrionCourse?retryWrites=true&w=majority
+  SECRET_OR_KEY: 6n3PnC8H7QCzXoH9
+---
